@@ -29,10 +29,8 @@ public class StandPlayTestActivity extends AppCompatActivity {
 
         videoPlayer = findViewById(R.id.video_player);
 
-        String source1 = "http://9890.vod.myqcloud.com/9890_4e292f9a3dd011e6b4078980237cc3d3.f20" +
-                ".mp4";
-        source1 = AppConst.TEST_URL2;
-        videoPlayer.setUp(source1, true, "测试视频");
+        String url = AppConst.TEST_URL1;
+        videoPlayer.setUp(url, true, "测试视频");
 
         //增加封面
         ImageView imageView = new ImageView(this);

@@ -16,6 +16,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         findViewById(R.id.btn_stand).setOnClickListener(this);
         findViewById(R.id.btn_detail).setOnClickListener(this);
+        findViewById(R.id.btn_detail2).setOnClickListener(this);
+        findViewById(R.id.btn_detail3).setOnClickListener(this);
+        findViewById(R.id.btn_detail4).setOnClickListener(this);
     }
 
     public void changeUI(Class<? extends Activity> tcls) {
@@ -30,6 +33,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_detail:
                 changeUI(DetailPlayTestActivity.class);
+                break;
+            case R.id.btn_detail2:
+                changeUI(DetailPlayTestActivity2.class);
+                break;
+            case R.id.btn_detail3:
+                changeUI(DetailPlayTestActivity3.class);
+                break;
+            case R.id.btn_detail4:
+                changeUI(DetailPlayTestActivity4.class);
                 break;
         }
     }

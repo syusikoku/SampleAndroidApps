@@ -8,7 +8,10 @@ import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.gsyplayer.entry.TestEntry;
 import com.shuyu.gsyvideoplayer.GSYVideoManager;
 import com.shuyu.gsyvideoplayer.builder.GSYVideoOptionBuilder;
 import com.shuyu.gsyvideoplayer.listener.GSYSampleCallBack;
@@ -16,19 +19,50 @@ import com.shuyu.gsyvideoplayer.listener.LockClickListener;
 import com.shuyu.gsyvideoplayer.utils.OrientationUtils;
 import com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer;
 
-public class DetailPlayTestActivity extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
+
+public class DetailPlayTestActivity2 extends AppCompatActivity {
 
     private StandardGSYVideoPlayer detailPlayer;
     private OrientationUtils orientationUtils;
     private boolean isPlay;
     private boolean isPause;
+    protected RecyclerView recyclerView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_detail_play);
+        setContentView(getLayoutId());
 
+        initOthers();
+        initList();
+        initPlayer();
+    }
+
+    protected void initOthers() {
+
+    }
+
+    protected int getLayoutId() {
+        return R.layout.activity_detail_play2;
+    }
+
+    private void initList() {
+        List<TestEntry> list = new ArrayList<>();
+        TestEntry testEntry;
+        for (int i = 0; i < 20; i++) {
+            testEntry = new TestEntry();
+            testEntry.title = "t_" + i;
+            list.add(testEntry);
+        }
+        recyclerView = findViewById(R.id.rvlist);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(new TestListAdapter(this, list));
+    }
+
+    private void initPlayer() {
         detailPlayer = findViewById(R.id.detail_player);
 
         // 增加封面
@@ -73,6 +107,13 @@ public class DetailPlayTestActivity extends AppCompatActivity {
                         if (orientationUtils != null) {
                             orientationUtils.backToProtVideo();
                         }
+                        onQuitEnterFullscreen();
+                    }
+
+                    @Override
+                    public void onEnterFullscreen(String url, Object... objects) {
+                        super.onEnterFullscreen(url, objects);
+                        onExecEnterFullscreen();
                     }
                 })
                 .setLockClickListener(new LockClickListener() {
@@ -91,9 +132,17 @@ public class DetailPlayTestActivity extends AppCompatActivity {
                 //直接横屏
                 orientationUtils.resolveByClick();
                 //第一个true是否需要隐藏actionbar，第二个true是否需要隐藏statusbar
-                detailPlayer.startWindowFullscreen(DetailPlayTestActivity.this, true, true);
+                detailPlayer.startWindowFullscreen(DetailPlayTestActivity2.this, true, true);
             }
         });
+    }
+
+    protected void onExecEnterFullscreen() {
+
+    }
+
+    protected void onQuitEnterFullscreen() {
+
     }
 
     @Override

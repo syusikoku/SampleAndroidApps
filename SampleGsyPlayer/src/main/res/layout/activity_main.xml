@@ -30,4 +30,30 @@
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
         android:text="详情界面播放" />
+
+    <Button
+        android:id="@+id/btn_detail2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:text="详情界面播放2" />
+
+    <Button
+        android:id="@+id/btn_detail3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:text="详情界面播放3" />
+    <Button
+        android:id="@+id/btn_detail4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:text="详情界面播放4" />
 </LinearLayout>
