@@ -1,5 +1,9 @@
 package com.example.gsyplayer;
 
+
+/**
+ * 可全屏
+ */
 public class DetailPlayTestActivity3 extends DetailPlayTestActivity2 {
     @Override
     protected int getLayoutId() {
