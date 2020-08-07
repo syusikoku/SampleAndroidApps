@@ -1,0 +1,4 @@
+include ':sampleijkplayer'
+include ':SampleGsyPlayer'
+//include ':app'
+rootProject.name = "SampleIJKPlayer"
