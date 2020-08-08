@@ -1,4 +1,8 @@
-include ':sampleijkplayer'
-include ':SampleGsyPlayer'
+include ':samplerefresh'
+include ':sampleviewpager2'
+//include ':SampleSoftKeyboard'
+//include ':weixeimmoj'
+//include ':sampleijkplayer'
+//include ':SampleGsyPlayer'
 //include ':app'
-rootProject.name = "SampleIJKPlayer"
+rootProject.name = "SampleApps"
