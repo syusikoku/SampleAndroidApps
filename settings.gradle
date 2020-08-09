@@ -1,5 +1,5 @@
 include ':samplerefresh'
-include ':sampleviewpager2'
+include ':sampleVerticalList'
 //include ':SampleSoftKeyboard'
 //include ':weixeimmoj'
 //include ':sampleijkplayer'
