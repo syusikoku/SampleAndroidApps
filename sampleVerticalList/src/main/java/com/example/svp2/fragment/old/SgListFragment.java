@@ -48,9 +48,9 @@ public class SgListFragment extends Fragment {
                 int height = RecyclerViewUtils.measureViewHeight(recyclerView);
                 LogUtils.e("SgListFragment height = " + height);
 
-//                ViewGroup.LayoutParams layoutParams = recyclerView.getLayoutParams();
-//                layoutParams.height = height;
-//                recyclerView.setLayoutParams(layoutParams);
+                ViewGroup.LayoutParams layoutParams = recyclerView.getLayoutParams();
+                layoutParams.height = height;
+                recyclerView.setLayoutParams(layoutParams);
             }
         });
 
